@@ -1,0 +1,107 @@
+<html>
+<head>
+	<title>SPRING 2023 CS 445 PROJECT #4: THE KNAPSACK PROBLEM</title>
+<style type="text/css">
+<!--
+
+body
+{
+	margin-top: 20px;
+	margin-right: 25px;
+	margin-bottom: 20px;
+	margin-left: 25px;
+	color: #000066;
+	background-color: #FFFFFF;
+	font-family: "verdana"; serif;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center">SPRING 2023 CS 445 PROJECT #4: THE KNAPSACK PROBLEM</h1>
+<ul>
+	<li><big><strong>Execute like this:  C:\&gt; java Knapsack input1.txt   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// or input2.txt or input3.txt</big></strong>
+	<li><big><strong>You must name your java file (and the class inside the file) Knapsack</big></strong>
+	<li><big><strong>Use  the demo program <b>printSubsets.java</b> as your starter file (rename to Knapsack.java) and look at the end of Clip-3 of lecture #14 to see sudo code.</big></strong>
+	<li><big><strong>print the subsets - each subset on its own like to the screen - not to a file</big></strong>
+</ul>
+
+<hr>
+<h3>Background:</h3>
+Project #4 takes on a classic problem known as the <b>knapsack</b> problem. Imagine a bag of weights and a scale in front of you. Can you pull out a subset of those weights from that bag such that the total weight is some specified total weight?
+<p>
+This problem has many real world applications and is interesting because no one has ever found an algorithm that guarantees to find the solution without requiring work that is proportional to trying every possible combination (subset) of size 1 or more weights from the bag.
+<h4>The following questions immediately arise:</h4>
+<ol>
+  <li>How many subsets can be generated from a given set?
+  <li>What tools does the Java language give us to generate those subsets?
+</ol>
+<p>From a set of N elements it is possible to generate 2 to the N subsets (the null set is always a subset of any set). This set containing all subsets is called the <b>power set</b>. If a given set has N elements, then its <b>power set</b> has 2 to the N elements.
+</p>
+There are a few ways to generate those subsets such as writing nested loops (awkward), using recursion (more elegant but still not the simplest), or using bitmaps (very easy).
+<h3>What is a bitmap?</h3>
+<p>
+A bit map is an association we make between a bit (1/0 or T/F) and an element of a set. The association is simple. For every element in the set we assign one bit to correspond to one element of the set. The correspondence is defined as a 1 indicating inclusion into the subset, and a 0 meaning exclusion from the subset.  If our set has N elements then we need N bits to map onto each set element.
+</p>
+<pre>
+original set:                  { 12 21 13 31 14 41 15 51 16 61 17 71 18 81 77 34 }
+our bitmap:                    {  1  0  1  1  0  1  1  1  1  0  1  1  0  0  1  0 }
+the subset indicated:          { 12    13 31    41 15 51 16    17 71       77    }
+</pre>
+<p>
+	Notice that only where the associated bit is a 1, do we include that element in our subset. Bits that are 0 cause the exclusion of their associated set element. The remaining questions is: "What tools does Java give us to set up this mapping and generate all the possible subsets?"
+</p>
+<p>
+	We will not actually use the actual bits inside integers as our bits because bit shift operations would then be required to isolate individual bits. Instead we will use a String of '1's and '0's as out bitmap, and each individual '1' or '0' char will serves in place of a bit. It is simple to convert an int to a String of 1s and 0s. A simplified version of our toBitString() function from project #1 will serve the purpose for this project #4.
+
+</p>
+<p>Watch how this demo program uses a simple  loop to generate a sequence of ints - and then converts the number to a bit string. That bit string then serves as the bitmap that is used to <i>select</i> or <i>filter</i> a subset from the original set.
+</p>
+
+</h4>Your task will be to adapt this demo such that it only selects and prints those subsets whose elements sum up to the specified total.</h4>
+<h4><a href="PrintSubSets.java" target="external">PrintSubSets.java</a></h4>
+
+<hr size="10", color="green">
+<h3>The Assignment: </h3>
+
+<p>Write a Java program that takes 1 command line arg which is the input file name and finds all the subsets of the original set that sum to the specified target number. You program must print a report to stdout that is formatted like this:</p>
+<pre>27 98 87 76 32 46 35 24 13                           &lt;-- this is a subset of the original set. It sums to 438
+27 98 87 76 80 57 13                                 &lt;-- these subset lines do not have to be in any particular order
+27 98 87 76 80 46 24                                 &lt;-- each one must however sum to 438
+27 98 87 65 43 46 35 24 13                           &lt;-- and the number of subset lines must match my solution's number exactly
+... etc. for each subset found that sums to  438
+</pre>
+
+<h4>
+	Your solution might <big>not</big> generate the subsets in the same order as my sorted-correct-output files. This is because my sorted-correct-output files have been post processed as follows:
+</h4>
+<ul>
+	<li>each subset array was sorted ascending
+	<li>each subset then treated as a line/string and the whole file of subset lines were sorted ascending
+</ul>
+
+<p>
+	To account for this my grading script will sort the lines of your out such that it can be diffed against a "correct" output file. When you examine your output it may be difficult to visually match against mine. You can count the number of lines in your output and confirm it matches the number of lines in mine. Once you hand it in the script will be the definitive judge.
+</p>
+
+</p>
+<table border=1 cellpadding=5>
+	<tr> <th>input file</th> <th>correct sorted output</th> </tr>
+	<tr> <td><a href="input-files/input-1.txt">input-1.txt</a></td> <td><a href="sorted-correct-output-files/sorted-correct-output-1.txt">sorted-correct-output #1</a></td> </tr>
+	<tr> <td><a href="input-files/input-2.txt">input-2.txt</a></td> <td><a href="sorted-correct-output-files/sorted-correct-output-2.txt">sorted-correct-output #2</a></td> </tr>
+	<tr> <td><a href="input-files/input-3.txt">input-3.txt</a></td> <td><a href="sorted-correct-output-files/sorted-correct-output-3.txt">sorted-correct-output #3</a></td> </tr>
+</table>
+
+<p>
+	A correctly written algorithm is capable of generating duplicate subsets. This is a natural consequence of generating every possible subset on sets that have duplicate elements. Do not bother to purge duplicate subsets. If you do, you will not match my output. Just generate all the subsets and print all that match the target sum.
+</h4>
+
+<h3>Other constraints/caveats for this lab</h3>
+<ul>
+	<li>You MAY use Math library functions but no bit shifting ops like >> or >>> etc
+</ul>
+<hr>
+
+</body>
+</html>

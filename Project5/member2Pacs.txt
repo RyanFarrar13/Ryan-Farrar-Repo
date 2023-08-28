@@ -1,0 +1,8 @@
+bgates BFPR AFCTC
+jsmith ASPCA YCL ACLU
+bjones ASPCA NRA
+gjetson BFPR AFCTC ACLU SDS
+afauxci PETA ASPCA
+kjohnson SAVE_THE_WHALES MADD
+jrogers NRA MADD GREENPEACE
+jsandburg YCL AFCTC ACLU
