@@ -1,0 +1,311 @@
+Initial contents of file "players.txt"
+-------------------
+Fezzik,Sportsmanlike,8,4,20,25
+Inigo,YouKeepUsingThatWord,3,2,12,12
+Buttercup,LightningSand,5,5,28,32
+Vizzini,Inconceivable!,10,2,11,15
+Rugen,SixFingers,6,4,22,22
+--------------------
+Now we run PlayerListTest program
+--------------------
+> java PlayerListTest
+Testing PlayerList and GamePlayer classes
+Here are the player stats: 
+Total Players: 5
+	Name: Fezzik
+	Rounds: 8
+	Successes: 4
+	Failures: 4
+	Ratio (successes only): 1.25
+
+	Name: Inigo
+	Rounds: 3
+	Successes: 2
+	Failures: 1
+	Ratio (successes only): 1.0
+
+	Name: Buttercup
+	Rounds: 5
+	Successes: 5
+	Failures: 0
+	Ratio (successes only): 1.1428571428571428
+
+	Name: Vizzini
+	Rounds: 10
+	Successes: 2
+	Failures: 8
+	Ratio (successes only): 1.3636363636363635
+
+	Name: Rugen
+	Rounds: 6
+	Successes: 4
+	Failures: 2
+	Ratio (successes only): 1.0
+
+
+Current list size is: 5
+Current array capacity is: 6
+
+Checking for names in the PlayerList
+Marge is not in the list -- will be added:
+	New player info: 
+	Name: Marge
+	Rounds: 0
+	Successes: 0
+	Failures: 0
+	Ratio (successes only): 1.0
+has been added to the PlayerList
+
+Fezzik is a name in the PlayerList
+
+Ingmar is not in the list -- will be added:
+	New player info: 
+	Name: Ingmar
+	Rounds: 0
+	Successes: 0
+	Failures: 0
+	Ratio (successes only): 1.0
+has been added to the PlayerList
+
+Inigo is a name in the PlayerList
+
+Checking for valid GamePlayers in the PlayerList
+	Name: Marge
+	Rounds: 0
+	Successes: 0
+	Failures: 0
+	Ratio (successes only): 1.0 has been authenticated and can play!
+		Simulating a success and a failure for Marge
+
+	Name: Fezzik
+	Rounds: 8
+	Successes: 4
+	Failures: 4
+	Ratio (successes only): 1.25 has been authenticated and can play!
+		Simulating a success and a failure for Fezzik
+
+	Name: Ingmar
+	Rounds: 0
+	Successes: 0
+	Failures: 0
+	Ratio (successes only): 1.0 has been authenticated and can play!
+		Simulating a success and a failure for Ingmar
+
+	Name: Inigo
+	Rounds: 0
+	Successes: 0
+	Failures: 0
+	Ratio (successes only): 1.0 is not authenticated
+
+Here are the player stats: 
+Total Players: 7
+	Name: Fezzik
+	Rounds: 10
+	Successes: 5
+	Failures: 5
+	Ratio (successes only): 1.2916666666666667
+
+	Name: Inigo
+	Rounds: 3
+	Successes: 2
+	Failures: 1
+	Ratio (successes only): 1.0
+
+	Name: Buttercup
+	Rounds: 5
+	Successes: 5
+	Failures: 0
+	Ratio (successes only): 1.1428571428571428
+
+	Name: Vizzini
+	Rounds: 10
+	Successes: 2
+	Failures: 8
+	Ratio (successes only): 1.3636363636363635
+
+	Name: Rugen
+	Rounds: 6
+	Successes: 4
+	Failures: 2
+	Ratio (successes only): 1.0
+
+	Name: Marge
+	Rounds: 2
+	Successes: 1
+	Failures: 1
+	Ratio (successes only): 1.5
+
+	Name: Ingmar
+	Rounds: 2
+	Successes: 1
+	Failures: 1
+	Ratio (successes only): 1.5
+
+
+Current list size is: 7
+Current array capacity is: 12
+
+---------------------
+Printing out "players.txt" again we see how the program execution has updated it.
+Lines for Marge and Ingmar have been added to the file and the line for Fezzik has
+been updated to reflect the simulated rounds "played" in the program.  Note also
+that Inigo's entry is unchanged since he was not authenticated in the program.
+---------------------
+Fezzik,Sportsmanlike,10,5,24,31
+Inigo,YouKeepUsingThatWord,3,2,12,12
+Buttercup,LightningSand,5,5,28,32
+Vizzini,Inconceivable!,10,2,11,15
+Rugen,SixFingers,6,4,22,22
+Marge,IHeartCS401,2,1,4,6
+Ingmar,Programming!,2,1,4,6
+----------------------
+Now we run the PlayerListTest program a second time (using the updated file for data)
+-----------------------
+> java PlayerListTest
+Testing PlayerList and GamePlayer classes
+Here are the player stats: 
+Total Players: 7
+	Name: Fezzik
+	Rounds: 10
+	Successes: 5
+	Failures: 5
+	Ratio (successes only): 1.2916666666666667
+
+	Name: Inigo
+	Rounds: 3
+	Successes: 2
+	Failures: 1
+	Ratio (successes only): 1.0
+
+	Name: Buttercup
+	Rounds: 5
+	Successes: 5
+	Failures: 0
+	Ratio (successes only): 1.1428571428571428
+
+	Name: Vizzini
+	Rounds: 10
+	Successes: 2
+	Failures: 8
+	Ratio (successes only): 1.3636363636363635
+
+	Name: Rugen
+	Rounds: 6
+	Successes: 4
+	Failures: 2
+	Ratio (successes only): 1.0
+
+	Name: Marge
+	Rounds: 2
+	Successes: 1
+	Failures: 1
+	Ratio (successes only): 1.5
+
+	Name: Ingmar
+	Rounds: 2
+	Successes: 1
+	Failures: 1
+	Ratio (successes only): 1.5
+
+
+Current list size is: 7
+Current array capacity is: 12
+
+Checking for names in the PlayerList
+Marge is a name in the PlayerList
+
+Fezzik is a name in the PlayerList
+
+Ingmar is a name in the PlayerList
+
+Inigo is a name in the PlayerList
+
+Checking for valid GamePlayers in the PlayerList
+	Name: Marge
+	Rounds: 2
+	Successes: 1
+	Failures: 1
+	Ratio (successes only): 1.5 has been authenticated and can play!
+		Simulating a success and a failure for Marge
+
+	Name: Fezzik
+	Rounds: 10
+	Successes: 5
+	Failures: 5
+	Ratio (successes only): 1.2916666666666667 has been authenticated and can play!
+		Simulating a success and a failure for Fezzik
+
+	Name: Ingmar
+	Rounds: 2
+	Successes: 1
+	Failures: 1
+	Ratio (successes only): 1.5 has been authenticated and can play!
+		Simulating a success and a failure for Ingmar
+
+	Name: Inigo
+	Rounds: 0
+	Successes: 0
+	Failures: 0
+	Ratio (successes only): 1.0 is not authenticated
+
+Here are the player stats: 
+Total Players: 7
+	Name: Fezzik
+	Rounds: 12
+	Successes: 6
+	Failures: 6
+	Ratio (successes only): 1.3214285714285714
+
+	Name: Inigo
+	Rounds: 3
+	Successes: 2
+	Failures: 1
+	Ratio (successes only): 1.0
+
+	Name: Buttercup
+	Rounds: 5
+	Successes: 5
+	Failures: 0
+	Ratio (successes only): 1.1428571428571428
+
+	Name: Vizzini
+	Rounds: 10
+	Successes: 2
+	Failures: 8
+	Ratio (successes only): 1.3636363636363635
+
+	Name: Rugen
+	Rounds: 6
+	Successes: 4
+	Failures: 2
+	Ratio (successes only): 1.0
+
+	Name: Marge
+	Rounds: 4
+	Successes: 2
+	Failures: 2
+	Ratio (successes only): 1.5
+
+	Name: Ingmar
+	Rounds: 4
+	Successes: 2
+	Failures: 2
+	Ratio (successes only): 1.5
+
+
+Current list size is: 7
+Current array capacity is: 12
+
+---------------------
+Note that in the run above Marge and Ingmar are found because they were added in the
+previous run.  Their information (and Fezzik's) are once again updated in the program.
+The saved file is now as shown below.
+----------------------
+Fezzik,Sportsmanlike,12,6,28,37
+Inigo,YouKeepUsingThatWord,3,2,12,12
+Buttercup,LightningSand,5,5,28,32
+Vizzini,Inconceivable!,10,2,11,15
+Rugen,SixFingers,6,4,22,22
+Marge,IHeartCS401,4,2,8,12
+Ingmar,Programming!,4,2,8,12
+
